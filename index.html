@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charity AI Adoption Approach</title>
+<meta name="description" content="An interactive sketch of how Faizaan Saeed would approach AI and Microsoft Copilot adoption at a large UK charity: change impact and readiness, barriers and interventions, a phased plan, measures of sustained use, responsible AI and a five-slide summary. Illustrative only.">
+<meta property="og:title" content="How I'd approach AI adoption at a large UK charity: Faizaan Saeed">
+<meta property="og:description" content="Change impact and ADKAR-style readiness, barrier diagnosis, a pilot-scale-sustain plan, adoption measures, responsible AI and a five-slide summary. Illustrative, not based on any internal information.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saeedfzn.github.io/charity-ai-adoption-demo/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%231c5cab'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--bg:#f6f5f2;--surface:#fcfcfb;--surface-2:#f0efec;--line:#dedcd6;--ctl:#86847d;--text:#0b0b0b;--text-2:#52514e;--muted:#5f5d58;--accent:#2a78d6;--accent-ink:#1c5cab;--btn:#1c5cab;--accent-soft:#e3eefc;--good:#0ca30c;--warning:#fab219;--critical:#d03b3b;--good-ink:#006300;--critical-ink:#b02a2a;--warn-ink:#7a5200}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#121211;--surface:#1a1a19;--surface-2:#232321;--line:#383835;--ctl:#7d7b74;--text:#f0efec;--text-2:#c3c2b7;--muted:#a9a79d;--accent:#3987e5;--accent-ink:#86b6ef;--btn:#1c5cab;--accent-soft:#16365c;--good-ink:#6fd66f;--critical-ink:#f08a8a;--warn-ink:#f2c45a}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#121211;--surface:#1a1a19;--surface-2:#232321;--line:#383835;--ctl:#7d7b74;--text:#f0efec;--text-2:#c3c2b7;--muted:#a9a79d;--accent:#3987e5;--accent-ink:#86b6ef;--btn:#1c5cab;--accent-soft:#16365c;--good-ink:#6fd66f;--critical-ink:#f08a8a;--warn-ink:#f2c45a}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.hero{padding:48px 0 20px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);font-weight:600}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.1;margin:8px 0 10px}
+h2{font-size:22px;margin:0 0 6px}
+h3{font-size:16px;margin:0 0 8px}
+p{overflow-wrap:anywhere}
+.byline{margin:0 0 12px;font-size:14px;color:var(--text-2)}
+.lede{font-size:17px;color:var(--text-2);margin:0}
+.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--accent);background:var(--surface);color:var(--text-2);font-size:14px;border-radius:0 6px 6px 0}
+nav.jump{display:flex;gap:6px;flex-wrap:wrap;margin:20px 0 0}
+nav.jump a{font-size:14px;padding:6px 11px;border-radius:999px;border:1px solid var(--ctl);background:var(--surface);color:var(--text-2);text-decoration:none}
+nav.jump a:hover{border-color:var(--accent);color:var(--accent-ink)}
+section{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:8px}
+.sub{color:var(--text-2);margin:0 0 12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+.grid>*{min-width:0}
+@media (max-width:720px){.g2,.g3{grid-template-columns:1fr}}
+.list{padding-left:20px;margin:0}.list li{margin:5px 0}
+.btn{font:inherit;font-size:14px;padding:8px 12px;border-radius:6px;border:1px solid var(--ctl);background:var(--surface);color:var(--text);cursor:pointer}
+.btn[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.btn.primary{background:var(--btn);border-color:var(--accent);color:#fff;font-weight:600}
+.btn[aria-disabled="true"]{background:var(--surface-2);border-color:var(--line);color:var(--muted);font-weight:400;cursor:not-allowed}
+.rowbtn{font:inherit;font-size:14px;text-align:left;background:none;border:0;padding:3px 0;color:var(--accent-ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.rowbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.choices{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fb{margin-top:10px;font-size:14px;padding:10px 12px;border-radius:8px;background:var(--surface-2)}
+.fb:empty{padding:0;margin:0}
+.ok{color:var(--good-ink);font-weight:600}.no{color:var(--critical-ink);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--text-2)}
+.scroll{overflow-x:auto}
+footer{padding:28px 0 60px;border-top:1px solid var(--line);color:var(--text-2);font-size:14px}
+a{color:var(--accent-ink)}
+.theme-toggle{position:absolute;top:12px;right:12px;font:inherit;font-size:12px;padding:5px 9px;border-radius:6px;border:1px solid var(--ctl);background:var(--surface);color:var(--text);z-index:5;cursor:pointer}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* --- additions for this demo --- */
+label.fld{display:block;font-size:13px;color:var(--text-2);font-weight:600;margin-bottom:4px}
+select{font:inherit;font-size:15px;padding:7px 10px;border-radius:6px;border:1px solid var(--ctl);background:var(--surface);color:var(--text);max-width:100%}
+.slider{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;margin:10px 0}
+.slider label{font-size:14px}
+.slider .out{font-weight:700;font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
+.slider input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}
+input[type=range]{height:24px;margin:0}
+.slider small{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:-2px}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.p-High{color:var(--critical-ink)}.p-Medium{color:var(--warn-ink)}.p-Low{color:var(--good-ink)}
+.big{font-size:22px;font-weight:700;line-height:1.2}
+.res-card{margin:10px 0 0}
+.res-card p{margin:8px 0 0;font-size:14px}
+@media (max-width:720px){.res{order:-1;position:sticky;top:6px;z-index:2}.res-card{padding:12px;box-shadow:0 4px 14px rgba(0,0,0,.18)}.res-card p{font-size:13px;line-height:1.45}}
+.kv{display:flex;flex-wrap:wrap;gap:16px;margin:6px 0 4px}
+.kv div{min-width:0}
+.kv span.k{display:block;font-size:12px;color:var(--muted)}
+tr.sel td{background:var(--accent-soft)}
+tr[data-g]{cursor:pointer}
+@media (max-width:520px){#matrix td:nth-child(5),#matrix-head th:nth-child(5){display:none}}
+.phase-h{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.ws{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 14px;padding:10px 0;border-bottom:1px solid var(--line)}
+.ws:last-child{border-bottom:0}
+.ws b{font-size:14px}
+@media (max-width:520px){.ws{grid-template-columns:1fr}}
+.bar-row{display:grid;grid-template-columns:150px minmax(0,1fr) 48px;gap:10px;align-items:center;margin:9px 0;font-size:14px}
+.bar-row .track{height:14px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.bar-row .fill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.bar-row .val{font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+@media (max-width:520px){.bar-row{grid-template-columns:minmax(0,1fr) 48px}.bar-row .track{grid-column:1/-1;grid-row:2}}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border:1px dashed var(--line);border-radius:4px;padding:1px 6px}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.loop div{background:var(--surface-2);border-radius:8px;padding:10px;font-size:13px}
+.loop b{display:block;font-size:12px;color:var(--accent-ink);text-transform:uppercase;letter-spacing:.05em}
+@media (max-width:620px){.loop{grid-template-columns:1fr 1fr}}
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;min-height:280px}
+.slide .num{font-size:12px;color:var(--muted);font-weight:600}
+.slide h3{font-size:22px;line-height:1.25;margin:4px 0 12px}
+.slide .say{margin-top:14px;font-size:14px;color:var(--text-2);border-top:1px dashed var(--line);padding-top:10px}
+.dots{display:flex;gap:2px;align-items:center}
+.dots button{width:24px;height:24px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;display:grid;place-items:center}
+.dots button::before{content:"";width:12px;height:12px;border-radius:50%;border:1px solid var(--ctl)}
+.dots button[aria-current="true"]::before{background:var(--accent);border-color:var(--accent)}
+.dots button:focus-visible{outline:2px solid var(--accent);outline-offset:0}
+.slidenav{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle light or dark theme">◐ Theme</button>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Interactive approach · AI and Copilot adoption · large UK charity</div>
+  <h1>How I'd approach AI adoption at a large UK charity</h1>
+  <p class="byline"><b>Faizaan Saeed</b> · built for a Change and Adoption Manager (AI) application</p>
+  <p class="lede">Switching AI tools on is the easy part. The real work is helping colleagues in very different jobs see what changes for them, get past what's stopping them, and still be using it well six months later. This page shows how I'd work that through, and you can try each step.</p>
+  <div class="note"><b>Illustrative only.</b> Nothing here uses internal BHF information. The colleague groups are typical of a large charity, and every score and figure is made up to show the method.</div>
+  <nav class="jump" aria-label="Sections on this page">
+    <a href="#impact">1 · Impact &amp; readiness</a>
+    <a href="#barriers">2 · Barriers</a>
+    <a href="#plan">3 · Intervention plan</a>
+    <a href="#measure">4 · Measuring adoption</a>
+    <a href="#responsible">5 · Responsible AI</a>
+    <a href="#slides">6 · In five slides</a>
+    <a href="#me">About me, honestly</a>
+  </nav>
+</header>
+
+<main>
+<section id="impact" aria-labelledby="h-impact">
+  <h2 id="h-impact">1 · Change impact and readiness assessment</h2>
+  <p class="sub">Not every team needs the same thing at the same time. I'd score how much AI changes each group's day-to-day work (impact), then how ready they are against the five ADKAR elements: Awareness, Desire, Knowledge, Ability, Reinforcement. They build in that order, so the place to start is the first one that's weak, not simply the lowest score. High impact plus low readiness is where support goes first. Move the sliders to try it.</p>
+  <div class="card">
+    <label class="fld" for="grpSel">Colleague group</label>
+    <select id="grpSel"></select>
+    <p id="grpDesc" style="margin:8px 0 0;font-size:14px;color:var(--text-2)"></p>
+    <p style="margin:4px 0 0;font-size:14px;color:var(--text-2)"><b>Possible AI use:</b> <span id="grpUse"></span></p>
+    <div class="grid g2" style="margin-top:6px">
+      <div>
+        <div class="slider"><label for="impS">Impact of AI on their work</label><span class="out" id="impO" aria-hidden="true"></span><input type="range" id="impS" min="1" max="5" step="1"><small>1 = barely changes · 5 = changes core tasks</small></div>
+        <div id="adkar"></div>
+      </div>
+      <div class="res">
+        <div class="card res-card" id="resultCard">
+          <div class="kv">
+            <div><span class="k">Impact</span><b id="rImp"></b> / 5</div>
+            <div><span class="k">Readiness (average)</span><b id="rRead"></b> / 5</div>
+            <div><span class="k">Support priority</span><div class="big" id="rPri"></div></div>
+          </div>
+          <p><b>Barrier point:</b> <span id="rWeak"></span></p>
+          <p id="rAct"></p>
+        </div>
+        <p class="sr" id="resLive" aria-live="polite"></p>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin:10px 0 0">Rules used. Support priority: High if impact ≥ 4 and readiness &lt; 3.5; Low if impact ≤ 2 or every element scores 4 or above; otherwise Medium. Barrier point: the first ADKAR element, in order, scoring 3 or below. ADKAR describes individuals, so a group average is only a rough summary; a real assessment would use interviews, a short survey and team leads' views, and would look at the spread within each group, not just my scores.</p>
+  </div>
+  <div class="card scroll">
+    <h3>All groups at a glance <span class="tag">illustrative</span></h3>
+    <table>
+      <caption class="sr">Impact, readiness and priority for each colleague group. Select a group name to edit it above.</caption>
+      <thead id="matrix-head"><tr><th scope="col">Group</th><th scope="col">Priority</th><th scope="col">Impact</th><th scope="col">Readiness</th><th scope="col">Possible AI use</th></tr></thead>
+      <tbody id="matrix"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="barriers" aria-labelledby="h-bar">
+  <h2 id="h-bar">2 · Barrier diagnosis</h2>
+  <p class="sub">"Low adoption" is a symptom. Each barrier has a different cause and needs a different response; sending everyone the same training email fixes very few of them. Pick what you're hearing:</p>
+  <div class="choices" role="group" aria-label="Choose a barrier" id="barBtns"></div>
+  <div class="card" id="barOut" aria-live="polite" tabindex="-1"></div>
+</section>
+
+<section id="plan" aria-labelledby="h-plan">
+  <h2 id="h-plan">3 · Intervention plan: pilot, scale, sustain</h2>
+  <p class="sub">Six workstreams running across three phases over roughly six months, starting with Copilot and repeating the same approach for platform AI, automation and whatever comes next. I'd build it with the existing organisational change and adoption colleagues and fit it to the governance already in place, rather than as a separate track. This is about everyday working practice, not IT change control or release management. Choose a phase:</p>
+  <div class="choices" role="group" aria-label="Choose a phase" id="phaseBtns"></div>
+  <div class="card" aria-live="polite">
+    <div class="phase-h" id="phaseWhen"></div>
+    <p style="margin:4px 0 8px" id="phaseGoal"></p>
+    <div id="phaseBody"></div>
+    <p style="margin:10px 0 0;font-size:14px"><b>Move on when:</b> <span id="phaseGate"></span></p>
+  </div>
+</section>
+
+<section id="measure" aria-labelledby="h-meas">
+  <h2 id="h-meas">4 · Measuring adoption and sustained behaviour change</h2>
+  <p class="sub">Licences assigned is not adoption. I'd track leading indicators (early signs it's taking hold) alongside lagging ones (whether it stuck and made a difference), and use them to change what we're doing, not just to report.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Leading indicators</h3><ul class="list">
+      <li><b>Active use:</b> share of licensed people using it in a given week (from the tool's own usage reports), looked at by team and never used to rank individuals.</li>
+      <li><b>Depth of use:</b> how many different tasks or apps people use it in, not just one-off chat.</li>
+      <li><b>Confidence:</b> a two-question pulse ("I know when to use it", "I know what not to put in it").</li>
+      <li><b>Session and clinic attendance;</b> questions raised with champions.</li>
+    </ul></div>
+    <div class="card"><h3>Lagging indicators</h3><ul class="list">
+      <li><b>Sustained use at 90 days:</b> still active three months after onboarding.</li>
+      <li><b>Value stories:</b> specific, checked examples of time saved or quality improved.</li>
+      <li><b>Changed practice:</b> teams that have rewritten a process around it.</li>
+      <li><b>Responsible use:</b> data incidents, and whether people report them quickly.</li>
+    </ul></div>
+  </div>
+  <div class="card">
+    <h3>Adoption dashboard <span class="tag">illustrative figures</span></h3>
+    <div class="grid g2" style="align-items:end">
+      <div><label class="fld" for="dashGrp">Group</label><select id="dashGrp"></select></div>
+      <div><label class="fld" for="dashMonth">Months since this group started: <span id="dashMonthO"></span></label><input type="range" id="dashMonth" min="1" max="6" step="1" value="3" style="width:100%;accent-color:var(--accent)"></div>
+    </div>
+    <div id="dash" style="margin-top:8px"></div>
+    <p id="dashRead" aria-live="polite" style="margin:8px 0 0;font-size:14px"></p>
+  </div>
+  <div class="card">
+    <h3>"You said, we did" <span class="tag">example responses</span></h3>
+    <p style="margin:0;font-size:14px;color:var(--text-2)">Feedback only builds trust if people see something happen. A short monthly loop (the examples below are invented to show the idea):</p>
+    <div class="loop"><div><b>Listen</b>pulse, clinics, champions</div><div><b>Theme</b>group what we hear</div><div><b>Act</b>change one thing per theme</div><div><b>Tell</b>"you said, we did" post</div></div>
+    <label class="fld" for="ysSel" style="margin-top:14px">Pick some example feedback to see an example response</label>
+    <select id="ysSel"></select>
+    <div class="fb" id="ysOut" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="responsible" aria-labelledby="h-resp">
+  <h2 id="h-resp">5 · Responsible AI for a charity</h2>
+  <p class="sub">Adoption and safety are one job, not two. If people aren't sure what's allowed, the careful ones stop using it and the careless ones carry on. These are the points I'd build into every intervention. The rules themselves belong to the data protection, information governance, safeguarding and fundraising compliance leads; my job would be making them clear and usable.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Supporter data</h3><p style="margin:0;font-size:15px">Supporters trust a charity with their details. Use only approved tools, use the minimum data a task needs, and never paste supporter records into personal or free AI accounts. Under UK GDPR, any new use of personal data has to be compatible with the purpose it was collected for.</p></div>
+    <div class="card"><h3>Health data is special category</h3><p style="margin:0;font-size:15px">In a heart-health context it can appear anywhere: a supporter mentioning their own condition on a call, or a note on why they give. Under UK GDPR, health data is special category data: using it needs a lawful basis <i>and</i> a separate Article 9 condition, and a new use that is likely to be high risk needs a data protection impact assessment first. Rule of thumb for colleagues: if it reveals something about someone's health, check with the data protection team before it goes near an AI tool.</p></div>
+    <div class="card"><h3>Safeguarding and judgement</h3><p style="margin:0;font-size:15px">AI can help draft and summarise, but decisions about people (a vulnerable supporter, a grant applicant, a volunteer) stay with people. A safeguarding concern always goes through the charity's normal safeguarding route, and is never left to an AI tool to triage or decide.</p></div>
+    <div class="card"><h3>Check the output</h3><p style="margin:0;font-size:15px">AI can sound certain and be wrong, which matters most for health information shared publicly. "AI drafts, you decide": check facts against the source, and have clinical or medical content reviewed by the right experts before it goes out.</p></div>
+    <div class="card"><h3>Fundraising copy is still fundraising</h3><p style="margin:0;font-size:15px">The Code of Fundraising Practice applies whoever, or whatever, wrote the first draft. An AI-drafted appeal still has to be accurate and not misleading, treat people in vulnerable circumstances fairly, and respect supporters' contact preferences. I'd have a named person sign off anything that goes out.</p></div>
+    <div class="card"><h3>Copilot: tidy the house first</h3><p style="margin:0;font-size:15px">Microsoft 365 Copilot only surfaces organisational content that the person using it can already view. So it doesn't break permissions, but anything overshared on SharePoint or Teams becomes much easier to stumble on. Before scaling up, I'd ask Technology and information governance about a permissions and sensitivity-labelling check. It's an adoption risk as much as a technical one: one bad surprise can set trust back months.</p></div>
+  </div>
+  <h3 style="margin-top:18px">Quick check: OK as described?</h3>
+  <div id="rq"></div>
+</section>
+
+<section id="slides" aria-labelledby="h-slides">
+  <h2 id="h-slides">6 · The approach in five slides</h2>
+  <p class="sub">If I had ten minutes to present this, here's the short version: "AI adoption in the first six months" in five slides, each with what I'd say. Use the buttons, or the left and right arrow keys.</p>
+  <div class="slide" id="slide" tabindex="0" role="group" aria-roledescription="slide" aria-label="Presentation slide"></div>
+  <div class="slidenav">
+    <button class="btn" id="prev" type="button">← Previous</button>
+    <div class="dots" id="dots" role="group" aria-label="Go to slide"></div>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+  <p class="sr" id="slideLive" aria-live="polite"></p>
+</section>
+
+<section id="me" aria-labelledby="h-me">
+  <h2 id="h-me">About me, honestly</h2>
+  <div class="grid g2">
+    <div class="card"><h3>What I bring</h3><ul class="list">
+      <li>I use AI tools deeply every day: Claude, Claude Code, connectors and agents. I know from practice what they're good at, where they go wrong and what it takes to trust the output. I also understand the concepts behind Microsoft 365 Copilot.</li>
+      <li>On a 15-day contract I delivered a working system for a manufacturer. It got used because I learned how the team actually worked first, demoed early, wrote plain-English guides and did a proper handover. That is adoption at the scale of one team, and it's the practical experience I'd be building from.</li>
+      <li>I know ADKAR as a framework, not from certification or from leading a programme. I've applied its logic on this page so you can check my understanding.</li>
+    </ul></div>
+    <div class="card"><h3>What I don't have yet</h3><ul class="list">
+      <li>I haven't led organisation-wide change.</li>
+      <li>I don't hold a change management qualification (Prosci, APMG or the Change Management Institute's ACMF).</li>
+    </ul></div>
+  </div>
+  <p class="sub" style="margin:8px 0 0;font-size:15px">I'd rather you knew that now. I built this page so you can judge how I think about the problem directly, rather than take my word for it.</p>
+</section>
+</main>
+
+<footer>
+  <p><b>Faizaan Saeed</b>, Swindon, UK. <a href="https://www.linkedin.com/in/faizaan-saeed-ba96a426b">LinkedIn</a> · <a href="https://saeedfzn.github.io/">Portfolio</a></p>
+  <p style="font-size:12px;color:var(--muted)">An independent sample made for a job application. It is not affiliated with, endorsed by or based on internal information from the British Heart Foundation. All groups, scores and figures are illustrative, and nothing here is legal, data protection or fundraising compliance advice.</p>
+</footer>
+</div>
+<script>
+(function(){
+const root=document.documentElement;
+document.getElementById('themeBtn').addEventListener('click',()=>{const d=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;root.dataset.theme=d?'light':'dark';});
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ---------- 1. impact and readiness ----------
+const AD=[
+ {k:'A',n:'Awareness',h:'They know why AI is being introduced, and why now',act:'Lead with the "why" through their own managers: what changes, what doesn\'t, and what it means for jobs. One honest message beats five glossy ones.'},
+ {k:'D',n:'Desire',h:'They want to take part: they can see what\'s in it for them',act:'Find the tasks they dislike most and show AI helping with those. Address worries openly, and give champions from their own team a voice.'},
+ {k:'K',n:'Knowledge',h:'They know how to use it, and what must not go into it',act:'Short, role-specific learning built on their real tasks, plus a one-page "do and don\'t" for data.'},
+ {k:'Ab',n:'Ability',h:'They can actually do it in their daily work, not just in training',act:'Hands-on practice and coaching in their own documents and workflows; protected time to try it, and drop-in clinics.'},
+ {k:'R',n:'Reinforcement',h:'Something keeps it going after launch',act:'Managers ask about it in one-to-ones, share value stories, recognise good use, and remove the old workaround where it makes sense.'}
+];
+const G=[
+ {id:'retail',n:'Retail shop teams',use:'Rota messages, stock notices, posts for local shops',d:'Shop managers, staff and volunteers, many part-time, often on shared devices with little desk time.',imp:2,r:[2,2,2,2,1]},
+ {id:'fund',n:'Fundraising',use:'Drafting appeals and thank-yous, summarising event feedback',d:'Writing-heavy work with tight deadlines. A strong fit for drafting help, but brand and tone matter.',imp:4,r:[3,3,2,2,2]},
+ {id:'research',n:'Research funding',use:'Drafting internal reports, summarising published research and policy, meeting notes',d:'Specialist staff handling confidential applications. A joint statement by UK research funders says reviewers must not put confidential applications into generative AI tools, and that funding decisions stay under human oversight, so clear boundaries matter more than speed.',imp:3,r:[3,2,3,2,2]},
+ {id:'care',n:'Supporter care',use:'Drafting replies, summarising cases, finding answers in guidance',d:'Contact-centre style work with a lot of personal and sometimes health data.',imp:5,r:[2,3,2,2,2]},
+ {id:'fin',n:'Finance and HR',use:'Analysing spreadsheets, drafting policies, answering common queries',d:'Process-heavy work with sensitive colleague data. Often early and confident technology users.',imp:3,r:[4,4,3,4,3]},
+ {id:'vol',n:'Volunteer coordinators',use:'Recruitment adverts, rotas, welcome packs, newsletters',d:'Spread across regions, juggling many volunteers. Time is the biggest constraint.',imp:3,r:[2,4,2,2,2]}
+];
+function readiness(r){return r.reduce((a,b)=>a+b,0)/r.length;}
+function priorityOf(imp,read,r){if(imp>=4&&read<3.5)return 'High';if(imp<=2||r.every(v=>v>=4))return 'Low';return 'Medium';}
+// ADKAR is sequential: the barrier point is the first element (in order) scoring 3 or below, not the lowest score.
+function barrierPoint(r){return r.findIndex(v=>v<=3);}
+const PRI={High:'go first, with the most support',Medium:'second wave',Low:'light touch for now; revisit as the tools change'};
+let cur=Math.max(0,G.findIndex(g=>g.id==='care'));
+const grpSel=$('grpSel');
+grpSel.innerHTML=G.map((g,i)=>`<option value="${i}">${esc(g.n)}</option>`).join('');
+$('adkar').innerHTML=AD.map((a,i)=>`<div class="slider"><label for="ad${i}">${a.n}</label><span class="out" id="ado${i}" aria-hidden="true"></span><input type="range" id="ad${i}" data-i="${i}" min="1" max="5" step="1"><small>${a.h}</small></div>`).join('');
+function renderGroup(){const g=G[cur];grpSel.value=cur;$('grpDesc').textContent=g.d;$('grpUse').textContent=g.use+'.';$('impS').value=g.imp;$('impO').textContent=g.imp;g.r.forEach((v,i)=>{$('ad'+i).value=v;$('ado'+i).textContent=v;$('ad'+i).setAttribute('aria-valuetext',v+' out of 5');});$('impS').setAttribute('aria-valuetext',g.imp+' out of 5');renderResult();renderMatrix();}
+let liveT,ready=false;
+function renderResult(){const g=G[cur],rd=readiness(g.r),p=priorityOf(g.imp,rd,g.r),w=barrierPoint(g.r);const wn=w<0?'None: every element is 4 or above':AD[w].n;const act=w<0?'Little to fix. Keep reinforcing, collect value stories, and ask this group for champions to help others.':AD[w].act;$('rImp').textContent=g.imp;$('rRead').textContent=rd.toFixed(1);$('rPri').innerHTML=`<span class="p-${p}">${p}</span>`;$('rWeak').textContent=wn;$('rAct').innerHTML=`<b>Where I'd start:</b> ${esc(act)} <span style="color:var(--text-2)">(${p} priority: ${PRI[p]}.)</span>`;clearTimeout(liveT);if(!ready)return;liveT=setTimeout(()=>{$('resLive').textContent=`${g.n}: impact ${g.imp} of 5, readiness ${rd.toFixed(1)} of 5, ${p} priority. Barrier point: ${wn}.`;},400);}
+function renderMatrix(){$('matrix').innerHTML=G.map((g,i)=>{const rd=readiness(g.r),p=priorityOf(g.imp,rd,g.r);return `<tr data-g="${i}" class="${i===cur?'sel':''}"><td><button type="button" class="rowbtn" aria-pressed="${i===cur}"><b>${esc(g.n)}</b><span class="sr"> (edit above)</span></button></td><td><span class="pill p-${p}">${p}</span></td><td>${g.imp}</td><td>${rd.toFixed(1)}</td><td>${esc(g.use)}</td></tr>`;}).join('');}
+grpSel.addEventListener('change',()=>{cur=+grpSel.value;renderGroup();});
+$('impS').addEventListener('input',e=>{G[cur].imp=+e.target.value;$('impO').textContent=e.target.value;e.target.setAttribute('aria-valuetext',e.target.value+' out of 5');renderResult();renderMatrix();});
+$('adkar').addEventListener('input',e=>{const i=+e.target.dataset.i;if(isNaN(i))return;G[cur].r[i]=+e.target.value;$('ado'+i).textContent=e.target.value;e.target.setAttribute('aria-valuetext',e.target.value+' out of 5');renderResult();renderMatrix();});
+function pickRow(tr){cur=+tr.dataset.g;renderGroup();grpSel.focus();}
+$('matrix').addEventListener('click',e=>{const tr=e.target.closest('tr[data-g]');if(tr)pickRow(tr);});
+renderGroup();ready=true;
+
+// ---------- 2. barriers ----------
+const B=[
+ {id:'why',n:'"Why are we doing this at all?"',ad:'Awareness',cause:'People have heard that AI is coming, but not why here, why now, or what it has to do with the cause they work for.',int:'A plain "why" from the sponsor, repeated by line managers in team meetings rather than left to an all-staff email: what problem it solves, what changes, what doesn\'t. Then check it landed by asking people to play it back.',msg:'"This is about giving you time back for the work that matters most, and here is what it means for our team."',own:'Senior sponsor for the organisation-wide message; line managers for what it means locally. The adoption lead drafts and tests the messages.',m:'Pulse question: "I understand why we are introducing AI tools." Compare before and after.'},
+ {id:'jobs',n:'"Is this going to replace me?"',ad:'Desire',cause:'Fear of job loss, often unspoken, and made worse by vague messages about "efficiency".',int:'Leaders and line managers say clearly what AI is for and what it isn\'t for, then answer questions in small team sessions where it\'s safe to ask. Show AI taking on the tasks people dislike, not their judgement.',msg:'"AI is here to take the admin off your plate so you can spend more time on the work only you can do."',own:'Senior sponsor and line managers, with HR. The adoption lead prepares the messages and FAQs.',m:'Pulse question on how people feel about AI; questions raised in sessions.'},
+ {id:'time',n:'"I don\'t have time to learn it"',ad:'Ability',cause:'Learning feels like extra work on top of a full day, and the benefit isn\'t visible yet.',int:'Ten-minute "one task" sessions built on something they already do this week, plus protected practice time agreed with their manager. Drop-in clinics instead of long courses.',msg:'"Ten minutes now to save you time on something you do every week."',own:'Line managers protect the time; champions run the clinics; the adoption lead designs the bite-sized content.',m:'Attendance, then whether those people are still active 30 days later.'},
+ {id:'data',n:'"I\'m worried about data and privacy"',ad:'Knowledge',cause:'Unclear rules. Careful people stop altogether, which is the opposite of what we want.',int:'A one-page "what can go in, what can\'t" guide agreed with the data protection team, with charity-specific examples (supporter records, health information). Build it into every session, and make reporting a mistake no-blame.',msg:'"Here\'s exactly what\'s fine, what isn\'t, and who to ask. If in doubt, leave it out and ask."',own:'Data protection and information governance own the rules; the adoption lead makes them practical and visible.',m:'Confidence pulse ("I know what not to put in it"); speed of incident reporting.'},
+ {id:'wrong',n:'"It got it wrong once, so I don\'t trust it"',ad:'Ability',cause:'Expectations were set too high, and people know the tool in theory but haven\'t yet built the habit of checking and steering it. One bad answer becomes the story.',int:'Practise checking as a core skill on their own work: what it\'s good at, where it slips, and how to give it sources. Share honest examples of errors and how they were caught. Reset expectations: a first draft, not an oracle.',msg:'"It\'s a fast first draft, not the final word. AI drafts, you decide."',own:'Adoption lead and champions; subject experts for content-specific checks.',m:'Depth of use returning after a drop; "I trust it for X" pulse responses.'},
+ {id:'usecase',n:'"I don\'t know what I\'d use it for"',ad:'Desire',cause:'Generic demos don\'t connect to their actual job, so there is no "what\'s in it for me".',int:'Run a short use-case session with each team: list their repetitive tasks, try AI on two of them live, and turn what works into a team "prompt card". Collect and share peer examples.',msg:'"Here are three things people in your role already use it for."',own:'Champions within each team, supported by the adoption lead; team leads choose the priority tasks.',m:'Number of team use cases written down; depth of use (more than one task).'},
+ {id:'manager',n:'"My manager doesn\'t use it"',ad:'Reinforcement',cause:'People copy what\'s valued. If managers don\'t use it or ask about it, it fades.',int:'Equip managers first: a manager briefing, a short coaching guide with three questions to ask in one-to-ones, and examples of using it for their own work.',msg:'"Try it on one thing this week, then tell your team how it went."',own:'Heads of department; the adoption lead coaches managers directly.',m:'Manager active-use rate compared with their teams; sustained use at 90 days by team.'}
+];
+$('barBtns').innerHTML=B.map((b,i)=>`<button class="btn" type="button" aria-pressed="false" data-b="${i}">${esc(b.n)}</button>`).join('');
+function showBarrier(i){const b=B[i];$('barBtns').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.b===i));$('barOut').innerHTML=`<h3>${esc(b.n)} <span class="tag">Likely ADKAR gap: ${b.ad}</span></h3><p style="margin:0 0 8px;font-size:15px"><b>Likely cause:</b> ${esc(b.cause)}</p><p style="margin:0 0 8px;font-size:15px"><b>Targeted intervention:</b> ${esc(b.int)}</p><p style="margin:0 0 8px;font-size:15px"><b>Key message:</b> ${esc(b.msg)}</p><p style="margin:0 0 8px;font-size:15px"><b>Owner:</b> ${esc(b.own)}</p><p style="margin:0;font-size:15px"><b>How we'd know it's working:</b> ${esc(b.m)}</p>`;}
+$('barBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-b]');if(b)showBarrier(+b.dataset.b);});
+showBarrier(0);
+
+// ---------- 3. plan ----------
+const WS=['Communications','Engagement','Learning','Coaching','Champions network','Practical resources'];
+const P=[
+ {n:'Pilot',when:'Months 1–2',goal:'Prove value with two or three high-priority groups, learn what gets in the way, and fix it before scaling.',w:['A clear "why, what, what not" message from the sponsor; a pilot page with FAQs.','Listening sessions with pilot teams to map their real tasks and worries; baseline readiness pulse.','Ten-minute role-based "one task" sessions; a data do-and-don\'t guide agreed with the data protection team.','Weekly drop-in for pilot users; coach pilot team managers one-to-one.','Recruit 1–2 volunteer champions per pilot team, with time agreed by their manager.','First prompt cards built from pilot teams\' own tasks.'],gate:'Pilot groups show steady weekly use, a confidence pulse above the baseline, and a handful of checked value stories. The main barriers are understood and have responses.'},
+ {n:'Scale',when:'Months 3–4',goal:'Roll out group by group in priority order, using what the pilot taught us and champions from every area.',w:['Peer stories from the pilot ("here\'s how supporter care uses it"), timed to each group\'s go-live.','Team use-case sessions for each new group; a manager briefing before their team starts.','Role-specific learning paths; short videos for shop and remote colleagues who are rarely at a desk.','Champions run clinics; the adoption lead focuses on managers and on groups that are struggling.','Champions network grows to cover every area, with a monthly call and a shared channel.','Prompt library by role; a "check before you send" card; an updated FAQ.'],gate:'Each group has reached its target for active use, and depth of use is rising rather than flat.'},
+ {n:'Sustain',when:'Months 5–6 and beyond',goal:'Make it business as usual: part of how teams work, owned locally, and refreshed as the tools change.',w:['Monthly "you said, we did" post; updates when new features arrive.','Quarterly pulse; teams redesign one process around AI and share it.','Learning built into induction; "next step" sessions for confident users.','Managers coach their own teams using the one-to-one guide; the adoption lead steps back.','Champions own their area\'s use cases; recognition for good use.','Resources reviewed every quarter or when the tool or policy changes; retire what\'s out of date.'],gate:'Sustained use at 90 days holds, and value stories keep coming without central prompting. Responsibility has moved to local teams.'}
+];
+$('phaseBtns').innerHTML=P.map((p,i)=>`<button class="btn" type="button" aria-pressed="false" data-p="${i}">${i+1} · ${p.n}</button>`).join('');
+function showPhase(i){const p=P[i];$('phaseBtns').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.p===i));$('phaseWhen').textContent=`${p.n} · ${p.when}`;$('phaseGoal').textContent=p.goal;$('phaseBody').innerHTML=WS.map((w,j)=>`<div class="ws"><b>${w}</b><span style="font-size:15px">${esc(p.w[j])}</span></div>`).join('');$('phaseGate').textContent=p.gate;}
+$('phaseBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-p]');if(b)showPhase(+b.dataset.p);});
+showPhase(0);
+
+// ---------- 4. dashboard (illustrative, generated from simple curves) ----------
+const DM=[
+ {k:'Active use (weekly)',u:'%',max:100},
+ {k:'Depth of use (tasks)',u:'',max:6},
+ {k:'Confidence pulse',u:'%',max:100},
+ {k:'Still active at 90 days',u:'%',max:100}
+];
+// per group: start values and monthly growth (all invented for illustration)
+const DG={retail:[12,1.2,30,0,5,0.2,6],fund:[28,1.6,40,0,9,0.4,7],research:[22,1.4,35,0,8,0.4,6],care:[30,1.5,35,0,10,0.5,8],fin:[40,2.0,55,0,8,0.5,5],vol:[18,1.3,32,0,7,0.3,7]};
+function dashValues(id,m){const s=DG[id];const act=Math.min(85,s[0]+s[4]*(m-1));const dep=Math.min(5,s[1]+s[5]*(m-1));const conf=Math.min(90,s[2]+s[6]*(m-1));const ret=m<3?null:Math.round(act*0.8);return [Math.round(act),Math.round(dep*10)/10,Math.round(conf),ret];}
+$('dashGrp').innerHTML=G.map(g=>`<option value="${g.id}">${esc(g.n)}</option>`).join('');
+function renderDash(){const id=$('dashGrp').value,m=+$('dashMonth').value;$('dashMonthO').textContent=m;$('dashMonth').setAttribute('aria-valuetext',m+(m===1?' month':' months'));const v=dashValues(id,m);
+ $('dash').innerHTML=DM.map((d,i)=>{const x=v[i];if(x===null)return `<div class="bar-row"><span>${d.k}</span><div class="track" aria-hidden="true"></div><span class="val">n/a</span></div>`;return `<div class="bar-row"><span>${d.k}</span><div class="track" aria-hidden="true"><div class="fill" style="width:${(x/d.max*100).toFixed(0)}%"></div></div><span class="val">${x}${d.u}</span></div>`;}).join('');
+ let r;if(v[3]===null)r='Too early to judge sustained use: nobody in this group has had it for 90 days yet. Watch active use and confidence for now.';else if(v[0]<40)r='Active use is still low. I\'d go back to the barrier diagnosis for this group before adding more training.';else if(v[1]<3)r='People are using it, but only for one or two things. Next step: team use-case sessions to broaden depth of use.';else r='Healthy pattern: broad, deepening use. Focus on reinforcement and collecting value stories, and check the 90-day figure is keeping pace.';
+ $('dashRead').innerHTML=`<b>What I'd do with this:</b> ${r}`;}
+$('dashGrp').addEventListener('change',renderDash);$('dashMonth').addEventListener('input',renderDash);renderDash();
+const YS=[
+ {s:'"The training was too generic for shop work."',d:'We made a 10-minute version that works on a shared device, using real shop tasks: rota messages, stock notices and local social posts.'},
+ {s:'"I wasn\'t sure if I could paste in a supporter\'s email."',d:'We worked with the data protection team on a one-page guide with charity examples, and added it to every session and the FAQ.'},
+ {s:'"It made up a statistic in my draft."',d:'We added a "check before you send" card and a session segment on giving it sources, and shared the example (anonymised) so others could learn from it.'},
+ {s:'"I can never make the clinic times."',d:'We added an early-morning and a lunchtime slot, plus recorded five-minute walkthroughs.'}
+];
+$('ysSel').innerHTML=YS.map((y,i)=>`<option value="${i}">${esc(y.s)}</option>`).join('');
+function renderYS(){const y=YS[+$('ysSel').value];$('ysOut').innerHTML=`<b>You said:</b> ${esc(y.s)}<br><b>We did:</b> ${esc(y.d)}`;}
+$('ysSel').addEventListener('change',renderYS);renderYS();
+
+// ---------- 5. responsible AI quick check ----------
+const RQ=[
+ {q:'A fundraiser asks the approved AI tool to suggest five subject lines for a public appeal email, with no supporter data.',a:true,why:'No personal data, and a human picks and checks the final line.'},
+ {q:'A supporter care colleague pastes a call note, including a supporter\'s heart condition, into a free personal chatbot to summarise it.',a:false,why:'That\'s health data, which is special category under UK GDPR, going into an unapproved tool. Use only approved tools for approved purposes, and ask the data protection team if unsure.'},
+ {q:'A volunteer coordinator uses the approved tool to draft a welcome pack, then checks the dates and contacts before sending.',a:true,why:'A good use: drafting help, with a human checking the facts.'},
+ {q:'A team uses AI to decide which grant applications to reject, without anyone reading them.',a:false,why:'A funding decision with no human judgement. A joint statement by UK research funders is clear that generative AI is not used to make funding decisions, which stay under human oversight. People read, people decide.'}
+];
+$('rq').innerHTML=RQ.map((r,i)=>`<div class="card"><div>${esc(r.q)}</div><div class="choices" role="group" aria-label="Is this OK?"><button class="btn" type="button" aria-pressed="false" data-r="${i}" data-v="1">OK</button><button class="btn" type="button" aria-pressed="false" data-r="${i}" data-v="0">Not OK</button></div><div class="fb" id="rf${i}" role="status"></div></div>`).join('');
+$('rq').addEventListener('click',e=>{const b=e.target.closest('button[data-r]');if(!b)return;const i=+b.dataset.r,ok=(b.dataset.v==='1')===RQ[i].a;b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('rf'+i).innerHTML=`<span class="${ok?'ok':'no'}">${ok?'✓ Agreed':'✕ Have another look'}: ${RQ[i].a?'OK':'not OK'}.</span> ${esc(RQ[i].why)}`;});
+
+// ---------- 6. slides ----------
+const S=[
+ {t:'Start with people, not the tool',b:['Spend the first weeks listening: teams, managers, Technology, data protection, HR and existing change colleagues.','Map how different groups actually work today and what they worry about.','Agree with the sponsor what "good adoption" means, and how we\'ll measure it, before launching anything.'],say:'AI adoption fails when it\'s treated as a software rollout. My starting point is understanding the work, the same way I did on a 15-day build for a manufacturer, at much smaller scale: I learned how the team worked before showing them anything.'},
+ {t:'Diagnose: impact, readiness and barriers',b:['Change impact assessment for each colleague group: what changes, and how much.','ADKAR readiness checks to find the first gap for each group.','A barrier diagnosis that separates fear, time, trust, rules and relevance, because each needs a different response.'],say:'This tells us where to start, and stops us sending everyone the same training email. I\'d show the matrix from section 1 here.'},
+ {t:'Pilot with real use cases and champions',b:['Two or three high-impact, low-readiness groups first.','Use cases built from their own tasks, with plain-English guides and prompt cards.','A champion in every pilot team; safe use and data rules built in from day one.'],say:'On my last delivery, early demos and plain-English guides were what got the system used. The pilot is where we learn what doesn\'t work, cheaply.'},
+ {t:'Scale and sustain: make it everyday practice',b:['Roll out by priority, with managers briefed before their teams.','Learning, coaching and clinics in small doses; a champions network covering every area.','Reinforcement: managers ask about it in one-to-ones, value stories are shared, resources are refreshed as the tools change.'],say:'The goal is that by month six, teams own it locally and central support can step back.'},
+ {t:'Measure, learn and adapt',b:['Leading indicators: active use, depth of use, confidence.','Lagging indicators: sustained use at 90 days, checked value stories, changed processes.','A monthly "you said, we did" loop, and a six-month review with the sponsor to plan what\'s next.'],say:'I\'d close with what I\'d report at month three and month six, and what I\'d change if the numbers weren\'t moving.'}
+];
+let si=0;
+$('dots').innerHTML=S.map((s,i)=>`<button type="button" data-s="${i}" aria-label="Slide ${i+1}: ${esc(s.t)}"></button>`).join('');
+function showSlide(i,announce){si=Math.max(0,Math.min(S.length-1,i));const s=S[si];$('slide').innerHTML=`<div class="num">Slide ${si+1} of ${S.length}</div><h3>${esc(s.t)}</h3><ul class="list">${s.b.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="say"><b>What I'd say:</b> ${esc(s.say)}</div>`;$('slide').setAttribute('aria-label',`Slide ${si+1} of ${S.length}: ${s.t}`);$('prev').setAttribute('aria-disabled',si===0);$('next').setAttribute('aria-disabled',si===S.length-1);$('dots').querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',+b.dataset.s===si?'true':'false'));if(announce)$('slideLive').textContent=`Slide ${si+1} of ${S.length}: ${s.t}`;}
+$('prev').addEventListener('click',()=>showSlide(si-1,true));
+$('next').addEventListener('click',()=>showSlide(si+1,true));
+$('dots').addEventListener('click',e=>{const b=e.target.closest('button[data-s]');if(b)showSlide(+b.dataset.s,true);});
+$('slides').addEventListener('keydown',e=>{if(e.target.closest('a,input,select')||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==='ArrowRight'){e.preventDefault();showSlide(si+1,true);}else if(e.key==='ArrowLeft'){e.preventDefault();showSlide(si-1,true);}});
+showSlide(0,false);
+})();
+</script>
+</body>
+</html>
