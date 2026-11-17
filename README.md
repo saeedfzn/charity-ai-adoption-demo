@@ -11,7 +11,7 @@ A single-page, interactive sketch by Faizaan Saeed, built for a Change and Adopt
 5. **Responsible AI:** supporter data, health data as special category data under UK GDPR, safeguarding, checking outputs, the Code of Fundraising Practice and Copilot permissions hygiene, plus a short quick check.
 6. **The approach in five slides:** "AI adoption in the first six months", with speaker notes.
 
-It closes with a plain statement of what I bring and what I don't have yet.
+It closes with a short statement of what I bring.
 
 Plain HTML, CSS and JavaScript in one file, with no dependencies. It has a light and dark theme, works at phone width and can be used with a keyboard.
 
